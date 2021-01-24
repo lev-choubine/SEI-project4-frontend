@@ -57,7 +57,7 @@ const handleNewMessageChange = (event) => {
       :
       <div>
           <img className="iconPic" src={message.image}/>
-          <p>{message.senderId} says:</p>
+          <p>{message.senderId}:</p>
           <p> {message.body}</p>
         
       </div>
