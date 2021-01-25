@@ -8,7 +8,7 @@ const Chat = (props) => {
   const id = props.room
   const type ="chat"
   const image =props.pic
-  const time = Date.now()
+
   // console.log(props)
   const { messages, sendMessage } = useChat(roomId, user, id, type, image); // Creates a websocket and manages messaging
   const [newMessage, setNewMessage] = useState(``);
@@ -18,11 +18,11 @@ const Chat = (props) => {
     const handleRoomNameChange = (event) => {
     setText(event.target.value);
   };
-console.log(props)
+
 
 const handleSendMessage = (e) => {
 
-  console.log(roomId);
+ 
   sendMessage(newMessage);
   setNewMessage(e.target.value);
  

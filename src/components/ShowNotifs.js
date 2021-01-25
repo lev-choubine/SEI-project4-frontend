@@ -4,22 +4,16 @@ import Response from './Response'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function ShowNotifs(props) {
-
+    console.log(props)
     const [alertsLength, setAlertsLength] = useState(props.alerts.length)
-    // let alertsLength = 0
-    console.log(props.alerts.length);
-    console.log(alertsLength);
     const alerts = props.alerts.map((p, index) => {
         const handleShowNotifDetails = () => {
             if (p.read === true) {
                 setAlertsLength(alertsLength - 1)
             }
-            console.log(p.email+index);
-            // if(!p.email[index]){
-
-            // }else{
+    
                 document.getElementById(`${p.email+index}`).style.display="block"
-            // }
+  
            
 
             const userData = {
