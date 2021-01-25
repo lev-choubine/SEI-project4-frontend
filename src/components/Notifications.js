@@ -8,6 +8,7 @@ import Image from './Image'
 import Others from './Others'
 import Response from './Response'
 import Chat from './chat/Chat'
+import { Redirect } from 'react-router-dom';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Notifications = (props) => {
@@ -23,31 +24,16 @@ const Notifications = (props) => {
   const [scrolled, setScrolled] = useState(false)
 
 
-
-    // function updateScroll(){
-    //     if(!scrolled){
-    //         var element = document.querySelector('#notify');
-    //         element.scrollTop = element.scrollHeight;
-    //     }
-    // }
-    
-
-
-
-
   // get random user
   const getRandomUser = () => {
 
     let route;
 
     if (props.user.preference !== 'Both') {
-      route = `${REACT_APP_SERVER_URL}/api/users/users/${props.user.gender}/${props.user.preference}/${props.user.email}`
+      route = `${REACT_APP_SERVER_URL}/api/users/users/${props.user.gender}/${props.user.preference}/${props.user.email}/${props.user.location}`
     } else {
-      route = `${REACT_APP_SERVER_URL}/api/users/users/random`
+      route = `${REACT_APP_SERVER_URL}/api/users/users/random/${props.user.gender}/${props.user.email}/${props.user.location}`
     }
-  
-  
-    const url = `${REACT_APP_SERVER_URL}/api/users/users/${props.user.preference}`
 
       Axios.get(route)
 
@@ -55,11 +41,11 @@ const Notifications = (props) => {
         console.log(res.data.profile)
         setAccount(res.data.profile)
       
-      }) .catch(err => {
+      }).catch(err => {
         console.log(err);
+        
     })
   }
-
   
   function getMyInfo (route){
     if(!props.user.email){

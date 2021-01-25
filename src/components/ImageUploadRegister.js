@@ -47,12 +47,13 @@ class ImageUploadRegister extends Component {
                 <section className="left-side">
                     <form>
                       <div className="choosePicForm">
-                        <div>
-                          <input className="chooseFile"  type="file"/>
-                        </div>
+                      <div id="choose-file-btn-div" class="btn btn-light">
+                        <div id="choose-file-sub-div">choose file</div>
+                        <input id="choose-file-btn" className="chooseFile" type="file" class="hide_file"/>
+                      </div>
 
                         <div>
-                          <button type="button" className="submitPhoto" onClick={this.handleImageUpload}>Submit</button>
+                          <button type="button" className="submitPhoto" class="btn btn-light" onClick={this.handleImageUpload}>submit</button>
                         </div>
                       </div>
                     </form>

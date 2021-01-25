@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
+import NoResults from './components/NoResults';
 // import About from './Components/About';
 import Notifications from "./components/Notifications"
 import Chat from "./components/chat/Chat"
@@ -28,10 +29,6 @@ function App() {
   // Set state values
   const [currentUser, setCurrentUser] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(true);
-
-
-  
-
 
 
   useEffect(() => {
@@ -76,6 +73,7 @@ function App() {
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
           {/* <PrivateRoute path="/profile" component={ Profile } user={currentUser}/> */}
           <Route exact path="/chat" component={Chat} user={currentUser}/>
+          {/* <Route exact path="/error" component={NoResults} /> */}
           <PrivateRoute exact path="/chat/:roomId" component={Notifications}  user={currentUser} />
          
         

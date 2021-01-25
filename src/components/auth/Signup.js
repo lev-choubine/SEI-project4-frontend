@@ -15,6 +15,7 @@ const Signup = () => {
     const [bio, setBio] = useState('');
     const [gender, setGender] = useState('');
     const [preference, setPreference] = useState('');
+    const [location, setLocation] = useState('')
     const [photo, setPhoto] = useState('');
 
     const handleName = (e) => {
@@ -38,13 +39,14 @@ const Signup = () => {
     const handlePreference = (e) => {
         setPreference(e.target.value);
     }
+    const handleLocation = (e) => {
+        setLocation(e.target.value);
+    }
 
     const handlePhoto = (e) => {
         setPhoto(e.target.value);
     }
 
-
-    ////////////////////////////
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
@@ -61,7 +63,7 @@ const Signup = () => {
         e.preventDefault();
         console.log(typeof age)
         if (password === confirmPassword && password.length >= 8 && age >17 && photo!=="" && age !== "" && name!=="" && gender!=="" && preference !== "") {
-            const newUser = { name, email, password, age, gender, bio, preference, photo };
+            const newUser = { name, email, password, age, gender, bio, preference, location, photo };
             await axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
             .then(response => {
                 // console.log(response);
@@ -73,20 +75,24 @@ const Signup = () => {
             })
         } else if (password !== confirmPassword) {
                 alert('Password confirmation does not match password')
-        }else if(password.length < 8){
-            alert('Password must be over 8 characters')
-        }else if(age < 18 || age === ''){
+        } else if (password.length < 8){
+            alert('Password must be at least 8 characters')
+        } else if (age < 18 || age === ''){
             alert('Must be 18 or over')
-        }else if(photo===""){
+        } else if (photo===""){
             alert("must upload image")
-        }else if(name===""){
+        } else if (name===""){
             alert("must register a name")
-        }else if(gender===""){
+        } else if (gender===""){
             alert("must specify gender")
-        }else if(gender===""){
+        } else if (gender===""){
              alert("must specify preference")
+        } else if (location === '') {
+            alert("Please select your location")
+        }
     }
-    }
+
+
 
     if (redirect) return <Redirect to='/login' />
 
@@ -113,8 +119,32 @@ const Signup = () => {
                             <input type="password" name="confirmPassword" value={confirmPassword} onChange={handleConfirmPassword} className="form-control" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="age">Age (must be over 18!)</label>
+                            <label htmlFor="age">Age (must be over 18)</label>
                             <input type="number" name="age" value={age} onChange={handleAge} className="form-control" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="location">Location</label>
+                            <select name="location" id="location-drop-down" onChange={handleLocation}>
+                                <option value="">Select your location</option>
+                                <option value="Atlanta, GA">Atlanta, GA</option>
+                                <option value="Austin, TX">Austin, TX</option>
+                                <option value="Boston">Boston, MA</option>
+                                <option value="Cleveland">Cleveland, OH</option>
+                                <option value="DC">DC</option>
+                                <option value="Denver">Denver, CO</option>
+                                <option value="El Paso, TX">El Paso, TX</option>
+                                <option value="Jacksonville">Jacksonville, FL</option>
+                                <option value="Kansas-City">Kansas City, KS</option>
+                                <option value="Las-Vegas">Las Vegas, NV</option>
+                                <option value="Los-Angeles">Los Angeles, CA</option>
+                                <option value="Miami">Miami, FL</option>
+                                <option value="Minneapolis">Minneapolis, MN</option>
+                                <option value="Nashville">Nashville, TN</option>
+                                <option value="New-York">New York, NY</option>
+                                <option value="Oakland">Oakland, CA</option>
+                                <option value="Philadelphia">Philadelphia, PA</option>
+                                <option value="Phoenix">Phoenix, AZ</option>
+                            </select>
                         </div>
                         <div className="form-group">
                             <label htmlFor="Bio">Bio</label>
@@ -136,16 +166,19 @@ const Signup = () => {
                         <div className="form-group">
                             <label htmlFor="Preference">Preference</label>
                             <select name="preference" id="preference"  onChange={handlePreference}>
-                            <option value="">Choose your preference</option>
+                                <option value="">Select your preference</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Both">Both</option>
                             </select>
                         </div>
 
-                        <ImageUploadRegister photo={setPhoto}/>
-                        <input type="hidden" name="photo" value={photo} onChange={handlePhoto} className="form-control" />
-                        <button type="submit" className="btn btn-primary float-right">Submit</button>
+                        <div>
+                            <p>Upload your profile picture</p>
+                            <ImageUploadRegister photo={setPhoto}/>
+                            <input type="hidden" name="photo" value={photo} onChange={handlePhoto} className="form-control" />
+                        </div>
+                        <button type="submit" className="btn btn-primary float-right" >Submit</button>
                     </form>
                 </div>
             </div>

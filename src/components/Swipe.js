@@ -69,10 +69,11 @@ function Swipe(props) {
           <img className="profilePic" src={props.user.image_url} />
           
           <p id="user-name">{props.user.name}</p>
+          <p>{props.user.bio}</p> 
           <p>Age: {props.user.age}</p> 
-          <p>Bio: {props.user.bio}</p> 
+          <p>Location: {props.user.location}</p>
           <p>Gender: {props.user.gender}</p> 
-          <p>Likes: {props.user.preference}</p> 
+          <p>Preference: {props.user.preference}</p> 
           </div>
           <button id={props.user.image_url} onClick={handleSendMessage} className="swipe this">
             Like
