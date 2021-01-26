@@ -26,11 +26,11 @@ const Notifications = (props) => {
 
   // get random user
   const getRandomUser = () => {
-
     let route;
-
+    console.log(route);
     if (props.user.preference !== 'Both') {
       route = `${REACT_APP_SERVER_URL}/api/users/users/${props.user.gender}/${props.user.preference}/${props.user.email}/${props.user.location}`
+      // console.log(route);
     } else {
       route = `${REACT_APP_SERVER_URL}/api/users/users/random/${props.user.gender}/${props.user.email}/${props.user.location}`
     }
@@ -38,12 +38,12 @@ const Notifications = (props) => {
       Axios.get(route)
 
       .then(res => {
-        console.log(res.data.profile)
+  
+        console.log(res.data)
         setAccount(res.data.profile)
       
       }).catch(err => {
         console.log(err);
-        
     })
   }
   

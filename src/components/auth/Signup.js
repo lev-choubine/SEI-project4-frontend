@@ -27,42 +27,34 @@ const Signup = () => {
         console.log(age)
         console.log(typeof age)
     }
-
     const handleBio = (e) => {
         setBio(e.target.value);
     }
-
     const handleGender = (e) => {
         setGender(e.target.value);
     }
-
     const handlePreference = (e) => {
         setPreference(e.target.value);
     }
     const handleLocation = (e) => {
         setLocation(e.target.value);
     }
-
     const handlePhoto = (e) => {
         setPhoto(e.target.value);
     }
-
     const handleEmail = (e) => {
         setEmail(e.target.value);
     }
-
     const handlePassword = (e) => {
         setPassword(e.target.value);
     }
-
     const handleConfirmPassword = (e) => {
         setConfirmPassword(e.target.value);
     }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(typeof age)
-        if (password === confirmPassword && password.length >= 8 && age >17 && photo!=="" && age !== "" && name!=="" && gender!=="" && preference !== "") {
+        if (password === confirmPassword && password.length >= 8 && age >17 && photo!=="" && age !== "" && name!=="" && gender!=="" && preference !== "" && location !== "") {
             const newUser = { name, email, password, age, gender, bio, preference, location, photo };
             await axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
             .then(response => {
@@ -91,8 +83,6 @@ const Signup = () => {
             alert("Please select your location")
         }
     }
-
-
 
     if (redirect) return <Redirect to='/login' />
 
@@ -128,22 +118,22 @@ const Signup = () => {
                                 <option value="">Select your location</option>
                                 <option value="Atlanta, GA">Atlanta, GA</option>
                                 <option value="Austin, TX">Austin, TX</option>
-                                <option value="Boston">Boston, MA</option>
-                                <option value="Cleveland">Cleveland, OH</option>
+                                <option value="Boston, MA">Boston, MA</option>
+                                <option value="Cleveland, OH">Cleveland, OH</option>
                                 <option value="DC">DC</option>
-                                <option value="Denver">Denver, CO</option>
+                                <option value="Denver, CO">Denver, CO</option>
                                 <option value="El Paso, TX">El Paso, TX</option>
-                                <option value="Jacksonville">Jacksonville, FL</option>
-                                <option value="Kansas-City">Kansas City, KS</option>
-                                <option value="Las-Vegas">Las Vegas, NV</option>
-                                <option value="Los-Angeles">Los Angeles, CA</option>
-                                <option value="Miami">Miami, FL</option>
-                                <option value="Minneapolis">Minneapolis, MN</option>
-                                <option value="Nashville">Nashville, TN</option>
-                                <option value="New-York">New York, NY</option>
-                                <option value="Oakland">Oakland, CA</option>
-                                <option value="Philadelphia">Philadelphia, PA</option>
-                                <option value="Phoenix">Phoenix, AZ</option>
+                                <option value="Jacksonville, FL">Jacksonville, FL</option>
+                                <option value="Kansas City, KS">Kansas City, KS</option>
+                                <option value="Las Vegas, NV">Las Vegas, NV</option>
+                                <option value="Los Angeles, CA">Los Angeles, CA</option>
+                                <option value="Miami, FL">Miami, FL</option>
+                                <option value="Minneapolis, MN">Minneapolis, MN</option>
+                                <option value="Nashville, TN">Nashville, TN</option>
+                                <option value="New York, NY">New York, NY</option>
+                                <option value="Oakland, CA">Oakland, CA</option>
+                                <option value="Philadelphia, PA">Philadelphia, PA</option>
+                                <option value="Phoenix, AZ">Phoenix, AZ</option>
                             </select>
                         </div>
                         <div className="form-group">
@@ -156,12 +146,6 @@ const Signup = () => {
                             <input type="radio" id="female" name="gender" value="female" onChange={handleGender}/>
                             <label for="female">Female</label><br/>
                        </div>
-                        
-                            {/* <label htmlFor="Gender">Gender</label>
-                            <select name="gender" id="gender"  onChange={handleGender}>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                             </select> */}
                         
                         <div className="form-group">
                             <label htmlFor="Preference">Preference</label>
