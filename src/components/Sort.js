@@ -8,19 +8,20 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 function Sort(props) {
 
 const [alerts, setAlerts]= useState([]) 
-
+const [reload, setReload]= useState(false)
   
 console.log(props.email)
 
 useEffect(()=>{
     axios.get(`${REACT_APP_SERVER_URL}/api/users/myinfo/${props.email}`).
     then(res=>{
+        console.log(res.data.user)
         setAlerts(res.data.user[0].notifications)
     }).catch(err=>{console.log(err)})
 
 
     console.log(props.email)
-}, [props.email, props.messages])
+}, [ props.messages])
 
 const randomUser = props.user ? props.user : ''
 console.log(props)
@@ -35,7 +36,7 @@ console.log(props)
            <Swipe toggle={props.toggle} user={randomUser} pic={props.pic} id={props.id} me={props.me} room={props.user._id}/>
               </div>
               <div id="red">
-         <ShowNotifs alerts={alerts} me={props.me} my_email={props.email} pic={props.pic} messages={props.messages}/>
+         <ShowNotifs alerts={alerts} me={props.me} my_email={props.email} pic={props.pic} reload={setReload} messages={props.messages}/>
          </div>
    
 </div>

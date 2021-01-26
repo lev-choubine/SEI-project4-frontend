@@ -60,6 +60,14 @@ function Swipe(props) {
       props.toggle()
    
     }
+
+    const status = (status) => {
+      if(status === true) {
+        return 'Online'
+      } else if (status === false) {
+        return 'Offline'
+      }
+    }
     
     return(
       <div>
@@ -74,15 +82,16 @@ function Swipe(props) {
         </div>
           <div id="me">
                  <div>
-          <img className="profilePic" src={props.user.image_url} />
+          <img className={status(props.user.online)} src={props.user.image_url} />
           <div id="information">
           <p id="user-name">{props.user.name}</p>
           <div id="adduressu">
-          <p>Age: {props.user.age}</p> 
-          <p>Bio: {props.user.bio}</p> 
-          <p>Location {props.user.location}</p>
-          <p>Gender: {props.user.gender}</p> 
-          <p>Likes: {props.user.preference}</p> 
+          <p>{props.user.age}</p> 
+          <p>{props.user.bio}</p> 
+          <p>{props.user.location}</p>
+          <p>{status(props.user.online)}</p>
+          {/* <p>Gender: {props.user.gender}</p> 
+          <p>Likes: {props.user.preference}</p>  */}
           </div>
           </div>
           </div>

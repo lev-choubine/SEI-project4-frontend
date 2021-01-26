@@ -22,9 +22,12 @@ const Chat = (props) => {
     const handleRoomNameChange = (event) => {
     setText(event.target.value);
   };
-console.log(props)
+// console.log(props)
 props.reload(messages)
 const handleSendMessage = (e) => {
+  if(newMessage === "") {
+    return
+} 
 
   console.log(roomId);
   sendMessage(newMessage);
@@ -113,7 +116,7 @@ const handleNewMessageChange = (event) => {
   }
 
 
-<div id={messages.time}>
+<div id={messages.time} className="sendMessage">
       <input
         className="imputtowa"
         type="text"
@@ -122,7 +125,7 @@ const handleNewMessageChange = (event) => {
         onChange={handleNewMessageChange}
         // className="text-input-field"
       />
-      <button className="send" id={props.room+props.me}onClick={handleSendMessage}>Send</button>
+      <button className="send" id={props.room+props.me}onClick={handleSendMessage}></button>
    
       </div>
 
