@@ -22,19 +22,6 @@ const Notifications = (props) => {
   const [reload, setReload] = useState('')
 
 
-
-
-    // function updateScroll(){
-    //     if(!scrolled){
-    //         var element = document.querySelector('#notify');
-    //         element.scrollTop = element.scrollHeight;
-    //     }
-    // }
-    
-
-
-
-
   // get random user
   const getRandomUser = () => {
 
@@ -86,7 +73,7 @@ const Notifications = (props) => {
     // document.querySelector('.chat-room-container').addEventListener('scroll', function(){
     //   setScrolled(true);
   // });
-  }, [props.user.email, messages, reload])
+  }, [props.user.email])
 
   console.log(info);
   // const information = info && info.length ? info : ''

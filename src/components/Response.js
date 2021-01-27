@@ -5,7 +5,7 @@ import axios from "axios";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function Response (props){
-    
+    // console.log(props);
     const roomId = props.room; 
     const user = props.name // Gets roomId from URL
     const id = props.id
@@ -62,33 +62,24 @@ const notificationData = {
 
     
   return (
-       <div>
-            
-           {
-            props.type==="chat" ?
-       
-              
-                <div className="blue" id={props.room}>
-                  
-                     <Chat  room={props.id+props.room} me={props.name} id={props.id} type={"chat"} pic={props.pic} reload={props.reload} saveMessage={props.room} />
-                     {/* <button onClick={handleChat}>Initiate Chat</button> */}
-                </div>
-              
-                
-               :
-                <div>
-                    <div className="chat" id={props.room}>
-                        <Chat saveMessage={props.room} chat={handleChat} room={props.room+props.id} me={props.name} id={props.id} type={"chat"} pic={props.pic} reload={props.reload}/>
-                    </div>
-                    <button  id={props.room+props.id} onClick={handleSendMessage}>Chat</button>
-                </div>
-
-           }
-           
-            
-       </div>
-       
-    )
+    <div>
+      {
+        props.type==="chat" 
+        ?  
+        <div className="blue" id={props.room}>
+          <Chat room={props.id+roomId} me={props.name} id={props.id} type={"chat"} pic={props.pic} reload={props.reload} saveMessage={props.room} />
+          {/* <button onClick={handleChat}>Initiate Chat</button> */}
+        </div>
+        :
+        <div>
+          <div className="chat" id={props.room}>
+            <Chat saveMessage={props.room} chat={handleChat} room={roomId+props.id} me={props.name} id={props.id} type={"chat"} pic={props.pic} reload={props.reload}/>
+          </div>
+          <button id={props.room+props.id} onClick={handleSendMessage}>Chat</button>
+        </div>
+      }
+    </div>
+  )
 }
 
 export default Response;
