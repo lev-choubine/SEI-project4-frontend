@@ -29,7 +29,7 @@ const handleSendMessage = (e) => {
     return
 } 
 
-  console.log(roomId);
+
   sendMessage(newMessage);
   setNewMessage(e.target.value);
   
@@ -37,7 +37,7 @@ const handleSendMessage = (e) => {
     id: props.id,
     content: newMessage,
     date: Date.now(),
-    my_id: props.saveMessage,
+    my_id: roomId,
     type: 'chat',
     read: false,
     pic: props.pic,

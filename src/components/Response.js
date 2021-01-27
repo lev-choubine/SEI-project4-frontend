@@ -5,7 +5,7 @@ import axios from "axios";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function Response (props){
-    
+    console.log(props)
     const roomId = props.room; 
     const user = props.name // Gets roomId from URL
     const id = props.id
@@ -21,7 +21,7 @@ function Response (props){
         document.getElementById(`${props.room+props.id}`).style.display="none"
         console.log(props.email);
         sendMessage(newMessage);
-        setNewMessage("liked");
+        setNewMessage(`${props.name} wants to chat`);
         props.reload("me")
         props.reload("you")
 /////////////////////////////////////
@@ -70,7 +70,7 @@ const notificationData = {
               
                 <div className="blue" id={props.room}>
                   
-                     <Chat  room={props.id+props.room} me={props.name} id={props.id} type={"chat"} pic={props.pic} reload={props.reload} saveMessage={props.room} />
+                     <Chat  room={props.room} me={props.name} id={props.id} type={"chat"} pic={props.pic} reload={props.reload} saveMessage={props.room} />
                      {/* <button onClick={handleChat}>Initiate Chat</button> */}
                 </div>
               

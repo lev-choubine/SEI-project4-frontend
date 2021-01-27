@@ -44,7 +44,7 @@ function Swipe(props) {
         email: props.user.email,
         name: props.me
       }
-      console.log('i am frontend email', props.email);
+    
 
       axios.post(`${REACT_APP_SERVER_URL}/api/users/notifications`, notificationData)
       .then(res => {

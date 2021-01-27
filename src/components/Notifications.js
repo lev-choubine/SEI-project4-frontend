@@ -52,7 +52,7 @@ const Notifications = (props) => {
       Axios.get(route)
 
       .then(res => {
-        console.log(res.data.profile)
+     
         setAccount(res.data.profile)
       
       }) .catch(err => {
@@ -68,10 +68,9 @@ const Notifications = (props) => {
     
     Axios.get(route)
     .then(res =>{
-      console.log(props.user.email)
-      console.log(res.data)
+   
       setInfo(res.data.user[0])
-      console.log(info) 
+     
       
     })
     .catch(err=>{
@@ -86,7 +85,7 @@ const Notifications = (props) => {
     // document.querySelector('.chat-room-container').addEventListener('scroll', function(){
     //   setScrolled(true);
   // });
-  }, [props.user.email, messages, reload])
+  }, [props.user.email])
 
   console.log(info);
   // const information = info && info.length ? info : ''
@@ -99,7 +98,7 @@ const Notifications = (props) => {
   </div>
     <div id="swipe">
   
-  <Sort user={account} me={props.user.name} id={props.user.id} email={props.user.email} pic={info.image_url} toggle={getRandomUser} messages={messages}/>
+  <Sort user={account} me={props.user.name} id={props.user.id} reload={props.reload} email={props.user.email} pic={info.image_url} toggle={getRandomUser} messages={messages}/>
   </div>
  
         <div className="chat-room-container" id="notify" >
@@ -125,7 +124,7 @@ const Notifications = (props) => {
               
               </div>
               <div class="chatBox">
-                <Response room={message.id} name={props.user.name} id ={props.user.id} email={account.email} type={message.type} pic={info.image_url} reload={setReload}/>
+                {/* <Response room={message.id} name={props.user.name} id ={props.user.id} email={account.email} type={message.type} pic={info.image_url} reload={setReload}/> */}
                 </div>
               </div> 
               {/* :  */}

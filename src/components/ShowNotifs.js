@@ -28,13 +28,12 @@ function ShowNotifs(props) {
                 id: p._id,
                 user: p.my_id
             }
-            console.log(userData);
+           
             Axios.post(`${REACT_APP_SERVER_URL}/api/users/notifications/read`, userData)
             .then(res => {
-                console.log(res);
-                props.reload(true)
-           
-                props.reload(false)
+          
+            props.reload(true)
+            props.reload(false)
             }).catch(err => {
                 console.log(err)
             })
@@ -54,7 +53,7 @@ function ShowNotifs(props) {
                     <button className="yourName" onClick={handleShowNotifDetails}>(read)</button>
                     <p id={p.email+index} className="single-notif">{p.content}</p>
                     <div class="chatBox">
-                        <Response reload={setReload} room={p.from_sender} name={props.me} id ={p.my_id} email={p.email} type={p.type} pic={props.pic}/>
+                        <Response reload={setReload} room={p.from_sender} name={props.me} id ={p.my_id} email={p.email} type={p.type} pic={props.pic} id={props.id}/>
                     </div>
                     <hr />
                 </div>

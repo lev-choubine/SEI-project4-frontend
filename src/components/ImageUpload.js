@@ -36,8 +36,7 @@ class ImageUpload extends Component {
             email: this.props.email,
             image_url: link
         }
-        console.log(this.props.email)
-        console.log(link)
+     
         await Axios.post(`${REACT_APP_SERVER_URL}/api/users/profile/setup/image`, userData)
         .then( res=>{ console.log(res);
         this.props.pic(true)

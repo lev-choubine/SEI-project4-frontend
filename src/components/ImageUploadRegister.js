@@ -33,8 +33,7 @@ class ImageUploadRegister extends Component {
                  
                  this.props.photo(link)
               
-              console.log(this.props.email)
-              console.log(link)
+           
               
             })
           
