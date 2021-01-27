@@ -5,7 +5,7 @@ import axios from "axios";
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function Response (props){
-    console.log(props)
+    // console.log(props)
     const roomId = props.room; 
     const user = props.name // Gets roomId from URL
     const id = props.id

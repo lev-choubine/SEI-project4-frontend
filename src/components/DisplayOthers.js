@@ -33,7 +33,7 @@ function DisplayOthers(props){
         }
         // console.log(notifications);
         getMyInfo (`${REACT_APP_SERVER_URL}/api/users/myinfo/${props.info.email}`)
-    }, [props])
+    }, [])
 
     return(
         <div>

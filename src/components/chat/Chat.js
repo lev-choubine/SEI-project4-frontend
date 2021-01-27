@@ -6,10 +6,10 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Chat = (props) => {
   /////////////////////
-  
+  // console.log(props.room)
   const roomId = props.room
   const user = props.me // Gets roomId from URL
-  const id = props.room
+  const id = props.id
   const type ="chat"
   const image =props.pic
   const time = Date.now()

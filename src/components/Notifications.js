@@ -124,7 +124,7 @@ const Notifications = (props) => {
               
               </div>
               <div class="chatBox">
-                {/* <Response room={message.id} name={props.user.name} id ={props.user.id} email={account.email} type={message.type} pic={info.image_url} reload={setReload}/> */}
+                <Response room={message.id} name={props.user.name} id ={props.user.id} email={account.email} type={message.type} pic={info.image_url} reload={setReload}/>
                 </div>
               </div> 
               {/* :  */}

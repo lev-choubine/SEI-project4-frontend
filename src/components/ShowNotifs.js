@@ -8,8 +8,8 @@ function ShowNotifs(props) {
     const [alertsLength, setAlertsLength] = useState(props.alerts.length)
     const [reload, setReload] = useState('false')
     // let alertsLength = 0
-    console.log(props.alerts.length);
-    console.log(alertsLength);
+    // console.log(props.alerts.length);
+    // console.log(alertsLength);
     
     const alerts = props.alerts.map((p, index) => {
         // props.alerts[props.alerts.length - 1 - index]
