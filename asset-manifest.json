@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/token-dating/static/css/main.b2a5ce4c.chunk.css",
-    "main.js": "/token-dating/static/js/main.08d935e8.chunk.js",
-    "main.js.map": "/token-dating/static/js/main.08d935e8.chunk.js.map",
-    "runtime-main.js": "/token-dating/static/js/runtime-main.c4dffb4a.js",
-    "runtime-main.js.map": "/token-dating/static/js/runtime-main.c4dffb4a.js.map",
-    "static/js/2.4b79803f.chunk.js": "/token-dating/static/js/2.4b79803f.chunk.js",
-    "static/js/2.4b79803f.chunk.js.map": "/token-dating/static/js/2.4b79803f.chunk.js.map",
-    "static/js/3.301231a6.chunk.js": "/token-dating/static/js/3.301231a6.chunk.js",
-    "static/js/3.301231a6.chunk.js.map": "/token-dating/static/js/3.301231a6.chunk.js.map",
-    "index.html": "/token-dating/index.html",
-    "static/css/main.b2a5ce4c.chunk.css.map": "/token-dating/static/css/main.b2a5ce4c.chunk.css.map",
-    "static/js/2.4b79803f.chunk.js.LICENSE.txt": "/token-dating/static/js/2.4b79803f.chunk.js.LICENSE.txt"
+    "main.css": "/lev-choubine/SEI-project4-frontend/static/css/main.b2a5ce4c.chunk.css",
+    "main.js": "/lev-choubine/SEI-project4-frontend/static/js/main.08d935e8.chunk.js",
+    "main.js.map": "/lev-choubine/SEI-project4-frontend/static/js/main.08d935e8.chunk.js.map",
+    "runtime-main.js": "/lev-choubine/SEI-project4-frontend/static/js/runtime-main.51f9ea02.js",
+    "runtime-main.js.map": "/lev-choubine/SEI-project4-frontend/static/js/runtime-main.51f9ea02.js.map",
+    "static/js/2.10f1cf76.chunk.js": "/lev-choubine/SEI-project4-frontend/static/js/2.10f1cf76.chunk.js",
+    "static/js/2.10f1cf76.chunk.js.map": "/lev-choubine/SEI-project4-frontend/static/js/2.10f1cf76.chunk.js.map",
+    "static/js/3.301231a6.chunk.js": "/lev-choubine/SEI-project4-frontend/static/js/3.301231a6.chunk.js",
+    "static/js/3.301231a6.chunk.js.map": "/lev-choubine/SEI-project4-frontend/static/js/3.301231a6.chunk.js.map",
+    "index.html": "/lev-choubine/SEI-project4-frontend/index.html",
+    "static/css/main.b2a5ce4c.chunk.css.map": "/lev-choubine/SEI-project4-frontend/static/css/main.b2a5ce4c.chunk.css.map",
+    "static/js/2.10f1cf76.chunk.js.LICENSE.txt": "/lev-choubine/SEI-project4-frontend/static/js/2.10f1cf76.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c4dffb4a.js",
-    "static/js/2.4b79803f.chunk.js",
+    "static/js/runtime-main.51f9ea02.js",
+    "static/js/2.10f1cf76.chunk.js",
     "static/css/main.b2a5ce4c.chunk.css",
     "static/js/main.08d935e8.chunk.js"
   ]
